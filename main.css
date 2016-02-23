@@ -59,19 +59,56 @@ li img:active{
   box-shadow: none;
 }
 
+.box {
+  height:500px;
+  color: white;
+}
+
+.box1{
+  background-color:black;
+}
+
+.box2{
+  background-color:blue;
+}
+
+.box3{
+  background-color:red;
+}
 /*Used mozilla to refresh myself on media queries as well. Initally I used floats to create a two column grid but I figured I'd give flexbox a try because I'd never used it before. I read about it here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
 
 @media (min-width:1100px){
   
   .container {
     display: flex;
-    align-items: baseline;
+
+    /*creates multiple rows when needed*/
+    flex-flow: row wrap;
   }
   
   
   /*the "order" property allows you to pull an "item" out of the normal order and display it first like I do here. Seems like this would be really useful when designing for smaller screens (especially when there are more than two items that you want to stack) because you can rearrange and specify the exact order the items appear in the columns if you need to.*/
   .sidebar {
     order: -1;
+    background-color: grey;
+  }
+
+  .item{
+    max-width: 500px;
+    min-width: 300px;
+    padding: 15px;
+  }
+
+  .box1 {
+    order: 5;
+  }
+
+  .box2 {
+    order: 4;
+  }
+
+  .box3 {
+    order: 3;
   }
  
 }
